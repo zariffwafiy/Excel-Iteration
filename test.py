@@ -1,13 +1,11 @@
 import pandas as pd, numpy as np, openpyxl, csv, os, re, xlsxwriter
 
-# load excel file
+# load excel file (edit the file_path variable accordingly)
 file_path = "C:\\Users\\mzarif.wafiy\\OneDrive - PETRONAS\\Documents\\Python Files\\IVA Error Workshop\\IVA Error Workshop Fatin.xlsx"
 file = pd.read_excel(io = file_path, sheet_name= "Splitting - Zarif")
 
 # create an empty list to store dataframes
 df = []
-
-# basic comment
 
 for _, row in file.iterrows():
     tml_id = row["TMLID"] # access the "TMLID" column
@@ -54,10 +52,3 @@ print(df[["TMLID", "MeasuredReading"]])
 # save back to excel file
 with pd.ExcelWriter(file_path, engine="xlsxwriter", mode="w") as writer:
     df.to_excel(writer, sheet_name="Splitting - Zariff", index = False)
-
-# pseudocode:------------
-# for each rows, access the column TMLID
-# for each value of TMLID, tokenize the value using space as delimeter, will result in n amount of tokens_tmlid
-# if there are more than 1 token, duplicate the whole row except for TMLID
-# the rest of TMLID from row 1 should be moved to the duplicated row
-# repeat duplicating rows with different TMLID until exhaust the tokens_tmlid. the total amount of rows is n 
