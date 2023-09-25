@@ -15,7 +15,6 @@ for _, row in file.iterrows():
     tokens_tmlid = str(tml_id).split()
     # change the value of measured reading to string, then tokenize the "TMLID" values using space as a delimiter
     tokens_reading = str(measured_reading).split()
-    
 
     # if there are more than 1 token, create duplicate rows
     if len(tokens_tmlid) > 1:
