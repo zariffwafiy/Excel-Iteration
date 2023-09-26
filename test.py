@@ -1,7 +1,7 @@
 import pandas as pd, numpy as np, openpyxl, csv, os, re, xlsxwriter
 
 # load excel file (edit the file_path variable accordingly)
-file_path = "C:\\Users\\mzarif.wafiy\\OneDrive - PETRONAS\\Documents\\Python Files\\IVA Error Workshop\\IVA Error Workshop Fatin.xlsx"
+file_path = "IVA Error Workshop Fatin.xlsx"
 file = pd.read_excel(io = file_path, sheet_name= "Splitting - Zarif")
 
 # create an empty list to store dataframes
